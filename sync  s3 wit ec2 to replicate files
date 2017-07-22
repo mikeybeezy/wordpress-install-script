@@ -1,0 +1,8 @@
+# create 2 buckets 
+#one where the cloud front distribution will pick images up from
+#another where your word press images and media content will sit
+
+# sync your s3 bucket that you are using for cloud front wit the wordpress uploads
+# directory so that when you copy inages across everything sinks and and sideleted 
+# or added then servd through s3 via cloud front
+aws s3 sync --delete /var/www/html/wp-content/uploads s3://<Bucket name_development-bucket-wp-code-2017>
