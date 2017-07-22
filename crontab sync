@@ -1,0 +1,3 @@
+#SyncCron tab
+
+*/5 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads s3://development-bucket-media-2017
