@@ -1,0 +1,36 @@
+#!/bin/bash
+yum update -y
+yum install httpd php php-mysql stress -y
+cd /etc/httpd/conf
+#######
+cp httpd.conf httpdconfbackup.conf
+###### edit conf file with nano ###
+# AllowOverride controls what directives may be placed in .htaccess files.
+# It can be "All", "None", or any combination of the keywords:
+#   Options FileInfo AuthConfig Limit
+#
+  
+  AllowOverride All (THIS SHOULD CHANGE FROM NONE TO ALL SO THAT THE STAE IS SAVED AS ALL)
+
+############
+cd /var/www/html
+
+#---Creat load balance health check file
+echo "healthy" > healthy.html
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+
+#---Move wordpress files into main html directory
+cp -r wordpress/* /var/www/html/
+
+#---Get Rid of unecessary wordpress files and zip
+rm -rf wordpress
+rm -rf latest.tar.gz
+chmod -R 755 wp-content
+chown -R apache:apache wp-content
+service httpd start
+
+#---Make sure that the apache service stays on even after system reboot
+chkconfig httpd on
+
+#Complete al necessary security tasks to secure server and wordepress
