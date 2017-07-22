@@ -7,4 +7,4 @@
 
 
 WHEN YOU HAVE DONE AND SAVED THE NANO FILE  perform the comand below 
-servcie crond restart
+service crond restart
