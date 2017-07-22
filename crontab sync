@@ -1,3 +1,10 @@
-#SyncCron tab
+#SyncCron tab for media and for code bucket that will be served via s3
 
 */5 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads s3://development-bucket-media-2017
+
+
+*/5 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads s3://development-bucket-wp-code-2017
+
+
+WHEN YOU HAVE DONE AND SAVED THE NANO FILE  perfor 
+servie crond restart
