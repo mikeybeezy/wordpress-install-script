@@ -6,5 +6,5 @@
 */5 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads s3://development-bucket-wp-code-2017
 
 
-WHEN YOU HAVE DONE AND SAVED THE NANO FILE  perfor 
-servie crond restart
+WHEN YOU HAVE DONE AND SAVED THE NANO FILE  perform the comand below 
+servcie crond restart
