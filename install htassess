@@ -2,8 +2,11 @@ install htaccessfile in /var/www/html
 
 Options +FollowSymlinks
 RewriteEngine on
-rewriterule ^wp-content/uploads/(.*)$ http://d2jmrva8tfzxcq.cloudfront.net/$1 [r=301,nc]
+rewriterule ^wp-content/uploads/(.*)$ http://d2jmrva8tfzxcq.cloudfront.net/$1 [r=301,nc] (ENTER YOUR OWN CLOUD FRONT URL DOMAIN NAME)
 
 # BEGIN WordPress
 
 # END WordPress
+
+
+#ONCE INSTALLLED MAKE SURE YOU PRFORM A SERVICE HTTPD ORAPACHE RESTART
